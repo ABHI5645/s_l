@@ -18,7 +18,8 @@ export default class SignUp extends Component {
     e.preventDefault();
     const {userName,email,phoneNo,password}=this.state;
     console.log(userName,email,phoneNo,password);
-    fetch("http://localhost:3000/register", {
+    
+    fetch("http://localhost:8000/register", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -37,6 +38,7 @@ export default class SignUp extends Component {
     .then((res) => res.json())
     .then((data) => {
       console.log(data, "userRegister");
+      alert(data, "userRegister");
     });
 
 
